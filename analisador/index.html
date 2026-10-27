@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>LogicTS.Lab - Analisador de Texto</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="icon" type="image/jpeg" href="./src/img/AnalisadorLogo.jpg">
+</head>
+<body class="bg-gray-900 text-white min-h-screen p-6 font-sans">
+
+    <div class="max-w-6xl mx-auto">
+        <!-- Botão Voltar -->
+        <a href="../index.html" class="inline-flex items-center gap-2 text-gray-400 hover:text-white transition mb-8 group">
+            <i data-lucide="arrow-left" class="w-5 h-5 group-hover:-translate-x-1 transition-transform"></i>
+            <span class="text-sm font-medium">Menu Principal</span>
+        </a>
+
+        <h1 class="text-3xl font-bold mb-2 text-purple-400 flex items-center gap-3">
+            <i data-lucide="bar-chart-3" class="w-8 h-8"></i>
+            Analisador de Frequência
+        </h1>
+        <p class="text-gray-400 mb-8">Cole um texto abaixo para descobrir as palavras mais recorrentes.</p>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            
+            <!-- Área de Entrada -->
+            <div class="bg-gray-800 p-6 rounded-xl border border-gray-700">
+                <label for="textoInput" class="block text-sm font-semibold mb-2 text-gray-300">Texto para análise:</label>
+                <textarea 
+                    id="textoInput" 
+                    rows="12" 
+                    placeholder="Cole seu texto aqui..." 
+                    class="w-full bg-gray-900 border border-gray-700 rounded-lg p-4 focus:outline-none focus:border-purple-500 resize-none text-gray-200 leading-relaxed"
+                ></textarea>
+                <button id="btnAnalisar" class="mt-4 w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-4 rounded-lg transition flex items-center justify-center gap-2">
+                    <i data-lucide="search" class="w-5 h-5"></i>
+                    Analisar Texto
+                </button>
+            </div>
+
+            <!-- Área de Resultados -->
+            <div class="bg-gray-800 p-6 rounded-xl border border-gray-700 flex flex-col">
+                <h2 class="text-xl font-bold mb-4 flex items-center gap-2">
+                    <i data-lucide="list" class="w-5 h-5 text-purple-400"></i>
+                    Top 5 Palavras
+                </h2>
+                
+                <div id="resultadoContainer" class="flex-1 flex flex-col justify-center items-center text-gray-500 italic">
+                    Aguardando análise...
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script type="module" src="../dist/analisador/src/main.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+</html>
