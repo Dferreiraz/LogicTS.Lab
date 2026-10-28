@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="icon" href="./src/img/TSlogo.svg" type="image/svg+xml">
 </head>
+
 <body class="bg-gray-900 text-white min-h-screen flex items-center justify-center p-6">
 
     <div class="max-w-4xl w-full">
@@ -17,23 +19,38 @@
         </header>
 
         <main class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            
+
             <!-- Card do Inventário -->
-            <a href="./inventario/index.html" class="block bg-gray-800 p-6 rounded-xl hover:bg-gray-700 transition border border-gray-700 hover:border-blue-500 group">
+            <a href="./inventario/index.html"
+                class="block bg-gray-800 p-6 rounded-xl hover:bg-gray-700 transition border border-gray-700 hover:border-blue-500 group">
                 <div class="text-blue-400 mb-4">
                     <i data-lucide="backpack" class="w-10 h-10"></i>
                 </div>
-                <h2 class="text-2xl font-bold mb-2 group-hover:text-blue-400 transition-colors">Organizador de Inventário</h2>
+                <h2 class="text-2xl font-bold mb-2 group-hover:text-blue-400 transition-colors">Organizador de
+                    Inventário</h2>
                 <p class="text-gray-400 text-sm">Manipulação de Arrays, Interfaces e Tipagem Estática.</p>
             </a>
 
             <!-- Card do Analisador -->
-            <a href="./analisador/index.html" class="block bg-gray-800 p-6 rounded-xl hover:bg-gray-700 transition border border-gray-700 hover:border-purple-500 group">
+            <a href="./analisador/index.html"
+                class="block bg-gray-800 p-6 rounded-xl hover:bg-gray-700 transition border border-gray-700 hover:border-purple-500 group">
                 <div class="text-purple-400 mb-4">
                     <i data-lucide="bar-chart-3" class="w-10 h-10"></i>
                 </div>
-                <h2 class="text-2xl font-bold mb-2 group-hover:text-purple-400 transition-colors">Analisador de Texto</h2>
+                <h2 class="text-2xl font-bold mb-2 group-hover:text-purple-400 transition-colors">Analisador de Texto
+                </h2>
                 <p class="text-gray-400 text-sm">Maps, Algoritmos de Ordenação e Processamento de Strings.</p>
+            </a>
+
+            <!-- Card da Batalha -->
+            
+            <a href="./batalha/index.html"
+                class="block bg-gray-800 p-6 rounded-xl hover:bg-gray-700 transition border border-gray-700 hover:border-red-500 group">
+                <div class="text-red-400 mb-4">
+                    <i data-lucide="swords" class="w-10 h-10"></i>
+                </div>
+                <h2 class="text-2xl font-bold mb-2 group-hover:text-red-400 transition-colors">Simulador de Batalha</h2>
+                <p class="text-gray-400 text-sm">Classes, Herança, Encapsulamento e Lógica de Turnos.</p>
             </a>
 
         </main>
@@ -43,4 +60,5 @@
         lucide.createIcons();
     </script>
 </body>
+
 </html>

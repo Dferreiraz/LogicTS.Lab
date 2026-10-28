@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>LogicTS.Lab - Simulador de Batalha</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="icon" type="image/jpeg" href="./src/img/BatalhaLogo.jpg">
+</head>
+<body class="bg-gray-900 text-white min-h-screen p-6 font-sans">
+
+    <div class="max-w-4xl mx-auto">
+        <a href="../index.html" class="inline-flex items-center gap-2 text-gray-400 hover:text-white transition mb-8 group">
+            <i data-lucide="arrow-left" class="w-5 h-5 group-hover:-translate-x-1 transition-transform"></i>
+            <span class="text-sm font-medium">Menu Principal</span>
+        </a>
+
+        <h1 class="text-3xl font-bold mb-2 text-red-500 flex items-center gap-3">
+            <i data-lucide="swords" class="w-8 h-8"></i>
+            Simulador de Batalha
+        </h1>
+        <p class="text-gray-400 mb-8">Teste as classes e a lógica de combate em tempo real.</p>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            
+            <div class="lg:col-span-1 bg-gray-800 p-6 rounded-xl border border-gray-700 flex flex-col justify-between">
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3 p-4 bg-gray-900/50 rounded-lg border border-blue-500/30">
+                        <i data-lucide="shield" class="w-8 h-8 text-blue-400"></i>
+                        <div>
+                            <h3 class="font-bold text-lg">Herói</h3>
+                            <p class="text-xs text-gray-400">Vida: 100 | Ataque: 25 | Defesa: 10</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-3 p-4 bg-gray-900/50 rounded-lg border border-red-500/30">
+                        <i data-lucide="skull" class="w-8 h-8 text-red-400"></i>
+                        <div>
+                            <h3 class="font-bold text-lg">Monstro</h3>
+                            <p class="text-xs text-gray-400">Vida: 80 | Ataque: 30 | Defesa: 5</p>
+                        </div>
+                    </div>
+                </div>
+
+                <button id="btnBatalhar" class="mt-8 w-full bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-6 rounded-xl transition flex items-center justify-center gap-2 shadow-lg shadow-red-900/20 active:scale-95 transform duration-150">
+                    <i data-lucide="zap" class="w-5 h-5"></i>
+                    Iniciar Batalha
+                </button>
+            </div>
+
+            <div class="lg:col-span-2 bg-gray-800 p-6 rounded-xl border border-gray-700 flex flex-col min-h-[500px]">
+                <h2 class="text-xl font-bold mb-4 flex items-center gap-2">
+                    <i data-lucide="scroll-text" class="w-5 h-5 text-red-400"></i>
+                    Log de Combate
+                </h2>
+                
+                <div id="logContainer" class="flex-1 flex flex-col justify-center items-center text-gray-500 italic border-2 border-dashed border-gray-700 rounded-lg">
+                    Clique em "Iniciar Batalha" para ver o combate...
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script type="module" src="../dist/batalha/src/main.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+</html>
