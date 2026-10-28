@@ -1,4 +1,9 @@
-import { Item } from './types.ts';
+import { Item } from './types.js';
+
+function validarTipo(tipo: string): Item['tipo'] | null {
+    const tiposValidos: Item['tipo'][] = ['arma', 'pocao', 'escudo'];
+    return tiposValidos.includes(tipo as Item['tipo']) ? (tipo as Item['tipo']) : null;
+}
 
 function adicionarItem(lista: Item[], novoItem: Item): string {
     const pesoTotal = lista.reduce((acumulador, itemAtual) => {
@@ -44,32 +49,34 @@ function renderizarInventario(lista: Item[]) {
     });
 }
 
-const btn = document.getElementById('btnAdicionar') as HTMLButtonElement;
-btn.addEventListener('click', () => {
+if (typeof document !== 'undefined') {
+    const btn = document.getElementById('btnAdicionar') as HTMLButtonElement;
     const nomeInput = document.getElementById('nomeInput') as HTMLInputElement;
     const tipoSelect = document.getElementById('tipoSelect') as HTMLSelectElement;
     const pesoInput = document.getElementById('pesoInput') as HTMLInputElement;
 
-    const nome = nomeInput.value.trim();
-    const tipo = tipoSelect.value;
-    const peso = parseFloat(pesoInput.value);
+    btn.addEventListener('click', () => {
+        const nome = nomeInput.value.trim();
+        const tipo = validarTipo(tipoSelect.value);
+        const peso = parseFloat(pesoInput.value);
 
-    if (!nome || !tipo || isNaN(peso)) {
-        alert("Preencha todos os campos corretamente!");
-        return;
-    }
+        if (!nome || !tipo || isNaN(peso)) {
+            alert("Preencha todos os campos corretamente!");
+            return;
+        }
 
-    const novoItem: Item = { nome, tipo, peso };
-    const resultado = adicionarItem(minhaMochila, novoItem);
-    
-    if (resultado === "Item adicionado com sucesso!") {
-        renderizarInventario(minhaMochila);
-        nomeInput.value = '';
-        pesoInput.value = '';
-        tipoSelect.value = 'arma';
-    } else {
-        alert(resultado);
-    }
-});
+        const novoItem: Item = { nome, tipo, peso };
+        const resultado = adicionarItem(minhaMochila, novoItem);
 
-renderizarInventario(minhaMochila);
+        if (resultado === "Item adicionado com sucesso!") {
+            renderizarInventario(minhaMochila);
+            nomeInput.value = '';
+            pesoInput.value = '';
+            tipoSelect.value = 'arma';
+        } else {
+            alert(resultado);
+        }
+    });
+
+    renderizarInventario(minhaMochila);
+}

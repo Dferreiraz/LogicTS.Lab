@@ -1,4 +1,4 @@
-import { ResultadoAnalise } from './types.ts';
+import { ResultadoAnalise } from './types.js';
 
 export function analisarTexto(texto: string): ResultadoAnalise {
     const textoLimpo = texto.toLowerCase().replace(/[.,!?;:"'()]/g, '');
