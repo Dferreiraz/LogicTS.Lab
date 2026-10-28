@@ -1,4 +1,4 @@
-import { MatrizLabirinto, ConfigLabirinto, Celula } from './types.js';
+import { MatrizLabirinto, ConfigLabirinto } from './types.js';
 
 export function gerarLabirinto(config: ConfigLabirinto): MatrizLabirinto {
     const { largura, altura, densidadeParedes } = config;

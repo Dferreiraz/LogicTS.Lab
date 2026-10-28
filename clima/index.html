@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>LogicTS.Lab - Simulador de Clima</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="icon" type="image/jpeg" href="./src/img/LabirintosLogo.jpg">
+</head>
+
+<body class="bg-gray-900 text-white min-h-screen p-6 font-sans">
+
+    <div class="max-w-4xl mx-auto">
+        <a href="../index.html"
+            class="inline-flex items-center gap-2 text-gray-400 hover:text-white transition mb-8 group">
+            <i data-lucide="arrow-left" class="w-5 h-5 group-hover:-translate-x-1 transition-transform"></i>
+            <span class="text-sm font-medium">Menu Principal</span>
+        </a>
+
+        <h1 class="text-3xl font-bold mb-2 text-sky-400 flex items-center gap-3">
+            <i data-lucide="cloud-sun" class="w-8 h-8"></i>
+            Simulador de Clima
+        </h1>
+        <p class="text-gray-400 mb-8">Visualização de dados meteorológicos com SVG dinâmico.</p>
+
+        <!-- Controles -->
+        <div class="flex gap-4 mb-8">
+            <button id="btnSemana"
+                class="px-6 py-2 bg-sky-600 hover:bg-sky-700 rounded-lg font-semibold transition">Última Semana</button>
+            <button id="btnMes"
+                class="px-6 py-2 bg-gray-700 hover:bg-gray-600 rounded-lg font-semibold transition">Último Mês</button>
+        </div>
+
+        <!-- Área do Gráfico -->
+        <div id="containerGrafico" class="bg-gray-800 p-6 rounded-xl border border-gray-700 mb-8 w-full overflow-hidden"
+            style="min-height: 300px;">
+            <p class="text-gray-500 italic">Carregando gráfico...</p>
+        </div>
+
+        <!-- Estatísticas -->
+        <div id="statsContainer"></div>
+    </div>
+
+    <script type="module" src="../dist/clima/src/main.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+
+</html>
