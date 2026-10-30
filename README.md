@@ -1,6 +1,4 @@
-<h1 align="center">
-  🧪 LogicTS.Lab
-</h1>
+# 🧪 LogicTS.Lab
 
 <p align="center">
   <strong>Laboratório de Lógica de Programação com TypeScript</strong><br>
@@ -9,7 +7,7 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white" alt="HTML5">
-  <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat&logo=tailwind-css&logoColor=white" alt="Tailwind CSS">
+  <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white" alt="CSS3">
   <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat&logo=typescript&logoColor=white" alt="TypeScript">
   <img src="https://img.shields.io/badge/Status-Em%20desenvolvimento-orange" alt="Status">
 </p>
@@ -167,21 +165,25 @@ As seguintes tecnologias e ferramentas fazem parte do desenvolvimento do laborat
 
 - **HTML5** — Estrutura e semântica das páginas.
 - **CSS3** — Estilização, layouts e apresentação visual.
-- **TypeScript** — Tipagem estática, modelagem de dados e implementação da lógica.
-- **JavaScript** — Execução da lógica compilada no navegador.
+- **TypeScript** — Tipagem estática, modelagem de dados e implementação da lógica original.
+- **JavaScript (ES6+)** — Execução da lógica no navegador, utilizando arquivos convertidos manualmente.
 - **SVG** — Construção de gráficos e representações vetoriais.
 
 ### Ferramentas
 
 - **Visual Studio Code** — Ambiente de desenvolvimento.
-- **TypeScript Compiler (`tsc`)** — Compilação de TypeScript para JavaScript.
-- **Live Server** — Execução local das páginas durante o desenvolvimento.
 - **Git** — Controle de versão.
-- **GitHub** — Hospedagem do código e acompanhamento da evolução do projeto.
+- **GitHub Pages** — Hospedagem estática do projeto.
 
 ---
 
 ## 🚀 Como executar o projeto
+
+O LogicTS.Lab utiliza uma abordagem híbrida para fins de estudo.
+
+O código original é desenvolvido em **TypeScript**, enquanto sua versão em **JavaScript puro** é utilizada para execução direta no navegador.
+
+A conversão dos arquivos é realizada manualmente, sem a necessidade de um processo de build automático.
 
 ### 1. Clone o repositório
 
@@ -203,79 +205,116 @@ Abra a pasta no Visual Studio Code:
 code .
 ```
 
-### 4. Compile o TypeScript
+### 4. Execute no navegador
 
-O navegador executa JavaScript, portanto, os arquivos TypeScript precisam ser compilados antes da execução.
+1. Abra o arquivo `index.html` localizado na raiz do projeto para acessar o menu principal.
+2. Para acessar uma atividade diretamente, abra o `index.html` correspondente dentro da pasta do projeto desejado.
 
-Se o projeto possuir `tsconfig.json` e o compilador TypeScript estiver instalado:
+**Recomendação:** Utilize a extensão **Live Server** no VS Code para executar o projeto em um servidor local e facilitar o desenvolvimento.
 
-```bash
-tsc
-```
-
-Caso o compilador ainda não esteja disponível, siga a configuração de dependências do projeto para instalá-lo.
-
-### 5. Execute no navegador
-
-Abra o arquivo `index.html` correspondente à atividade desejada.
-
-Você também pode utilizar a extensão **Live Server** no VS Code para executar as páginas localmente e facilitar os testes durante o desenvolvimento.
-
-Certifique-se de que os arquivos JavaScript compilados estejam disponíveis nos caminhos referenciados pelo HTML.
+> **Importante:** O navegador executa os arquivos JavaScript da pasta `src/js/`. Os arquivos TypeScript da pasta `src/ts/` são mantidos como fonte original e referência dos estudos.
 
 ---
 
-## 📂 Estrutura do Projeto
+## 📂 Estrutura do projeto
 
 ```text
-LogicTS.Lab/                  # Dashboard principal
-├── package.json                # Scripts e módulos do projeto
-├── tsconfig.json               # Configuração do compilador TypeScript
-├── vercel.json                 # Configuração de deploy na Vercel
-├── .gitignore                  # Arquivos e diretórios ignorados
-├── public/                     # Interface do Menu Principal
-│    ├── index.html
-│    └── src/
-│    └── img/
-│          └──TSlogo.svg
+LogicTS.Lab/
+├── index.html                    # Menu principal
+├── src/                          # Recursos do menu principal
+│   ├── js/                       # Scripts
+│   └── img/                      # Imagens e recursos visuais
+│
 ├── inventario/
-│   ├── index.html              # Interface do Inventário
+│   ├── index.html
 │   └── src/
-│       ├── types.ts            # Interface Item e tipos auxiliares
-│       └── main.ts             # Lógica de negócio e manipulação do DOM
+│       ├── js/
+│       │   └── main.js
+│       └── ts/
+│           ├── types.ts
+│           └── main.ts
 │
 ├── analisador/
-│   ├── index.html              # Interface do Analisador de Texto
+│   ├── index.html
+│   ├── img/                      # Logo do projeto (.jpg)
 │   └── src/
-│       ├── types.ts            # ResultadoAnalise e PalavraFrequente
-│       └── main.ts             # Map, ordenação e renderização
+│       ├── js/
+│       │   └── main.js
+│       └── ts/
+│           ├── types.ts
+│           └── main.ts
 │
 ├── batalha/
-│   ├── index.html              # Interface do Simulador de Batalha
+│   ├── index.html
+│   ├── img/                      # Logo do projeto (.jpg)
 │   └── src/
-│       ├── types.ts            # LogBatalha, StatusCombate e TipoAtaque
-│       ├── combatente.ts       # Classe base e encapsulamento
-│       ├── personagens.ts      # Heroi/Monstro e herança
-│       ├── motor-batalha.ts    # Turnos e orquestração do combate
-│       └── main.ts             # Integração com DOM e logs
+│       ├── js/
+│       │   ├── combatente.js
+│       │   ├── personagens.js
+│       │   ├── motor-batalha.js
+│       │   └── main.js
+│       └── ts/
+│           ├── types.ts
+│           ├── combatente.ts
+│           ├── personagens.ts
+│           ├── motor-batalha.ts
+│           └── main.ts
 │
 ├── labirinto/
-│   ├── index.html              # Interface do Gerador Procedural
+│   ├── index.html
+│   ├── img/                      # Logo do projeto (.jpg)
 │   └── src/
-│       ├── types.ts            # MatrizLabirinto, Celula e Posicao
-│       ├── gerador.ts          # Algoritmo de geração 2D
-│       └── main.ts             # CSS Grid dinâmico e controles
+│       ├── js/
+│       │   ├── gerador.js
+│       │   └── main.js
+│       └── ts/
+│           ├── types.ts
+│           ├── gerador.ts
+│           └── main.ts
 │
-└── clima/
-    ├── index.html              # Interface do Simulador Meteorológico
-    └── src/
-        ├── types.ts            # RegistroClima e Estatisticas
-        ├── processador.ts      # Cálculos estatísticos e dados simulados
-        ├── grafico.ts          # Geração dinâmica de SVG Path
-        └── main.ts             # Dashboard reativo e Resize Listener
+├── clima/
+│   ├── index.html
+│   ├── img/                      # Logo do projeto (.jpg)
+│   └── src/
+│       ├── js/
+│       │   ├── processador.js
+│       │   ├── grafico.js
+│       │   └── main.js
+│       └── ts/
+│           ├── types.ts
+│           ├── processador.ts
+│           ├── grafico.ts
+│           └── main.ts
+│
+├── package.json
+├── tsconfig.json
+└── .gitignore
 ```
 
-> **Organização:** Cada atividade possui sua própria interface e diretório `src/`, mantendo os tipos, algoritmos e responsabilidades separados conforme a complexidade de cada projeto.
+> A estrutura acima representa a organização documentada do projeto. Os arquivos e diretórios listados devem corresponder aos existentes no repositório.
+
+### ❓ Por que existem pastas `ts/` e `js/`?
+
+Essa estrutura foi adotada para equilibrar **aprendizado e praticidade**.
+
+**Pasta `ts/` — Código-fonte original**
+
+Contém os arquivos desenvolvidos em TypeScript, com tipagem, interfaces, classes e os demais recursos utilizados durante os estudos.
+
+**Pasta `js/` — Código de execução**
+
+Contém os arquivos JavaScript correspondentes, convertidos manualmente para execução no navegador.
+
+Essa separação permite estudar TypeScript e manter versões executáveis em JavaScript sem depender de um processo de compilação automatizado.
+
+**Fluxo de desenvolvimento:**
+
+1. Desenvolver e atualizar a lógica em TypeScript.
+2. Converter manualmente as alterações necessárias para JavaScript.
+3. Atualizar os arquivos utilizados pela interface.
+4. Testar o funcionamento da aplicação no navegador.
+
+> Como a conversão é manual, mantenha os arquivos TypeScript e JavaScript sincronizados para evitar diferenças de comportamento.
 
 ---
 
